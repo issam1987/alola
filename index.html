@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
+
+        <title>Exercice VUEJS: Ghorbali Issam</title>
+
+        <!-- Bootstrap core CSS -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="assets/css/page.css" rel="stylesheet">
+        <link href="assets/css/autocomplete.css" rel="stylesheet">
+    </head>
+
+    <body class="text-center" cz-shortcut-listen="true">
+    <div class="container">
+
+        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">Exercice  VueJS : GHorbali Issam</header>
+
+            <main class="inner cover" role="main">
+                <h1 class="cover-heading">Exercice  VueJS </h1>
+                
+                <!-- BEGIN : APP VUEJS -->
+                <div class="mt-4" id="app-autocomplete-here">
+
+
+                    <input class="form-control" placeholder="Tapez l'adresse recherchée..." type="text" v-model="inputCity" v-on:keydown="onKeypressCity($event)" v-on:keyup="onKeypressCity($event)">
+
+                    <!-- LISTING : SUGGESTIONS HERE -->
+                    <div class="autocomplete-here-suggestions-container" v-if="suggestionsHere.length > 0"  style="background: #fff; z-index: 9">
+                        <ul style="position: relative; z-index: 999;" >
+                            <li v-for="suggestion in suggestionsHere">
+                                <span  v-on:click="onClickSuggestHere(suggestion)">{{ suggestion.label }}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div v-if="geojson !=''">
+                        <div class="col-md-12">
+                    <pre class="precode">
+                        <code>
+                        {{ geojson }}
+                        </code>
+                </pre>
+                        </div>
+                    </div>
+
+                    <!-- CITY SELECTED -->
+                    <div class="mt-4" v-if="suggestionSelected != ''">
+
+                        <div  class="alert alert-success" v-if="savingSuccessful === true">
+                        <b><i>{{ response }}</i></b>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END : APP VUEJS -->
+            </main>
+
+            <footer class="mastfoot mt-auto">   <strong>Copyright © 2022 <a href="#">Ghorbali Issam</a>.</strong>
+                All rights reserved.
+                </footer>
+        </div>
+
+    </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script crossorigin="anonymous"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script crossorigin="anonymous"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script crossorigin="anonymous"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+
+        <!-- Call code VUEJS to autocomplete -->
+        <script src="assets/js/autocomplete-vuejs.js"></script>
+    </body>
+</html>

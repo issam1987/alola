@@ -7,13 +7,6 @@
         private $database_name = "vuejs";
         private $username = "root";
         private $password = "";
-        /*
-        private $host = "olivecrazitouna.mysql.db";
-        private $database_name = "olivecrazitouna";
-        private $username = "olivecrazitouna";
-        private $password = "xVVaCZCrKx5r";
-        */
-        //mysql://olivecrazitouna:xVVaCZCrKx5r@olivecrazitouna.mysql.db:3306/olivecrazitouna
         public $conn;
         public function getConnection(){
             $this->conn = null;

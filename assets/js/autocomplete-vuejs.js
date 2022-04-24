@@ -42,6 +42,7 @@ new Vue({
                     }, error => {
                         console.error(error);
                     });
+                this.suggestionsHere = [];
             } else {
                 this.suggestionsHere = []
             }

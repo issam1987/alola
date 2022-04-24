@@ -13,6 +13,8 @@ new Vue({
     methods: {
         onKeypressCity(e) {
             var value = this.inputCity;
+
+            this.suggestionsHere = [];
             if(value=='') {
                 this.response = '';
                 this.geojson='';
@@ -42,7 +44,6 @@ new Vue({
                     }, error => {
                         console.error(error);
                     });
-                this.suggestionsHere = [];
             } else {
                 this.suggestionsHere = []
             }
